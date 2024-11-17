@@ -1,0 +1,41 @@
+{% extends "tech/base.html" %}{% load static %} {% block title %}Students{%endblock title %} {% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card border-light mb-3">
+         <div class="card-header">Student Registration form</div>
+         <div class="card-body">
+            <form action="{% url "students" %}" method="post" enctype="multipart/form-data">
+               {% csrf_token %}
+               <div class="mb-3">
+                  <label  class="form-label">First Name</label>
+                  <input type="text" class="form-control" placeholder="Enter first name" name="fname" >
+                </div>
+               <div class="mb-3">
+                  <label  class="form-label">Last Name</label>
+                  <input type="text" class="form-control" placeholder="Enter last name" name="lname" >
+                </div>
+               <div class="mb-3">
+                  <label  class="form-label">Email address</label>
+                  <input type="email" class="form-control" placeholder="Enter email" name="email" >
+                </div>
+               <div class="mb-3">
+                  <label  class="form-label">Age</label>
+                  <input type="number" class="form-control" placeholder="Enter age" name="age" >
+                </div>
+               <div class="mb-3">
+                  <label  class="form-label">Phone</label>
+                  <input type="numebr" class="form-control" placeholder="Enter phone" name="phone" >
+                </div>
+               <div class="mb-3">
+                  <label  class="form-label">Profile</label>
+                  <input type="file" class="form-control"  name="profile" >
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
